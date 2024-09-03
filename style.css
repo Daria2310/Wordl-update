@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    text-align: center;
+    font-size: 30px;
+    padding: 15px;
+    border-bottom: 3px solid black;
+    margin-bottom: 30px;
+}
+
+.question {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 20px;
+  margin-top: 20px;
+  height: 60px;
+  width: 60px;
+  background-color: rgb(112, 211, 250);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.rules {
+  visibility: hidden;
+  max-width: 600px;
+  width: 100%;
+  background-color: rgb(176, 233, 255, 0.85);
+  text-align: left;
+  position: absolute;
+  right: 0;
+  margin-right: 80px;
+  bottom: 0;
+  margin-bottom: 290px;
+  border-radius: 10%;
+  padding: 10px;
+}
+
+.display {
+  visibility: visible;
+}
+
+.boxes {
+    max-width: 500px;
+    width: 100%;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 25px;
+    margin: auto;
+}
+
+.box {
+    height: 80px;
+    width: 80px;
+    font-size: 40px;
+    text-transform: uppercase;
+    border: 6px solid rgb(190, 190, 190);
+    font-weight: bold;
+    display: flex;
+    align-items: center;   
+    justify-content: center;    
+}
+
+.correct {
+    background-color: rgb(19, 197, 19);
+    color: white;
+  }
+  
+.close {
+    background-color: rgb(236, 222, 16);
+    color: white;
+  }
+  
+.wrong {
+    background-color: #585555;
+    color: white; 
+    text-decoration-color: #2e2c2c;
+  }
+  
+.invalid {
+    animation: flash 1s;
+  }
+
+  @keyframes flash {
+    5% {
+      border-color: rgb(209, 0, 0);
+    }
+  
+    100% {
+      border-color: rgb(190, 190, 190);
+    }
+  }
+
+.spiral {
+    font-size: 40px;
+    animation: spin 1.5s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  
+.loading {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+.win, .stupid, .lost{
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 200px;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  margin-left: 35%;
+  top: 35%;
+}
+
+
+.show {
+  visibility: visible;
+  animation: fade-out 1s 2s forwards;
+}
+
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    }
+  100% {
+    opacity: 0;
+  }
+}
+
